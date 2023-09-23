@@ -1,0 +1,137 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Decorated from "../components/Decorated.astro";
+import Form from '../components/Form.astro';
+import Footer from '../components/Footer.astro'
+import Section from "../components/Section.astro";
+import BusyIcon from '../components/BusyIcons.astro';
+import ContactForm from "../components/ContactForm.astro";
+import Nav from '../components/Nav.astro';
+---
+
+<Layout title="GetLinked | Contact">
+    <Section general={false}>
+        <BusyIcon iconName="star" style="width:1rem"/>
+        
+        <BusyIcon iconName="starwhite" style="width:1rem; opacity: .5; right:2rem; top: 6rem;"/>
+        <BusyIcon iconName="starwhite" style="width:1rem; bottom: 18%; right:2rem"/>
+        <BusyIcon iconName="star" style="width:1rem; bottom: 10%; left:2rem"/>
+        <Decorated icon="<" />
+        <div class="lg-screen-nav">
+            <Nav link=
+            {[
+                {'name': 'Timeline', 'path': '/#sec-5',}, 
+                {'name': 'Overview', 'path': '/#overview'}, 
+                {'name': 'FAQs', 'path': '/#sec-5-main'}, 
+                {'name': 'Contact', 'path': '/contact'}, 
+            ]}></Nav>
+
+        </div>
+        <div class="container contact" id="contact-main">
+            <div class="message-lg">
+                <div id="contact-lg">
+                    <h1 class="font-m-bold" style="color:var(--sec-color-three)">Get In Touch</h1>
+                    <p>Contact Information</p>
+                    <p>27,Alara Street Yaba 100012 Lagos State</p>
+                    <p>Call Us : 07067981819</p>
+                    <p>we are open from Monday-Friday 08:00am - 05:00pm</p>
+                    <Footer/>
+                </div>
+                
+                <ContactForm fields={[
+                    {
+                        name: "first_name",
+                        tag: "input",
+                        placeholder: "First Name"
+                    },
+    
+                    {
+                        name: "email",
+                        tag: "input",
+                        type: "email",
+                        placeholder: "Email"
+                    },
+
+                    {
+                        name: "phone_number",
+                        tag: "input",
+                        
+                        placeholder: "Phone Number"
+                    },
+    
+                    {
+                        name: "message",
+                        tag: "textarea",
+                        placeholder: "Message"
+                    },
+                    
+                    
+                ]}>
+                <h1 class="font-m-bold">Questions or need assistance? Let us know about it</h1>
+                <p>Email us below to any question related to our event</p>
+            </ContactForm>
+
+            </div>
+        </div>
+        
+        <div id="footer-resp">
+            <Footer/>
+
+        </div>
+    </Section>
+</Layout>
+
+<style>
+    
+    .contact {
+        margin-top: 4rem;
+        padding-top: 3rem;
+        color: #fff;
+    }
+    
+    #contact-form h1 {
+        color: var(--sec-color-three);
+        font-family: 'ClashDisplaySemiBold';
+        line-height: 2.5rem;
+    }
+
+    #contact-lg {
+        display: none;
+    }
+
+    .lg-screen-nav {
+            display: none;
+    }
+     
+    @media (min-width: 710px) {
+        #contact-lg {
+            display: block;
+        }
+        .message-lg  {
+            display: grid;
+            align-items: center;
+            grid-template-columns: 1fr  2fr;
+            justify-content: space-between;
+            width: 100%;
+            text-align: start;
+            gap: 15rem;
+        }
+
+        .message-lg  div {
+            flex-basis: 50%;
+        }
+
+        #footer-resp {
+            display: none;
+        }
+
+        .lg-screen-nav {
+            display: block;
+        
+        }
+        
+        #contact-main {
+            margin-top: 0;
+        }
+    }
+</style>

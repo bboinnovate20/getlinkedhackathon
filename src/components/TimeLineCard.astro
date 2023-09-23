@@ -1,0 +1,155 @@
+---
+interface Props {
+    title: string;
+    content: string;
+    date: string;
+    no: string;
+}
+
+const {title, content, date, no} = Astro.props;
+---
+
+<article class="timeline">
+    <div id="content">
+        <h4>{title}</h4>
+        <p>{content}</p>
+    </div>
+    <div id="date">
+        <span id="no">{no}</span>
+        <p>{date}</p>
+    </div>
+</article>
+
+
+<style>
+    
+    article {
+        margin-block: 2.5rem;
+    }
+    article * {
+        font-family: 'Montserrat-Regular';
+        text-align: left;
+    }
+    
+    #date p,
+    article h4 {
+        font-family: 'Montserrat-SemiBold' !important;
+        color: var(--sec-color-three);
+    }
+    
+    article h4 {
+        
+        margin: 0;
+        
+        margin-bottom: .8rem;
+        /* line-height: 1rem; */
+    }
+    p {
+        margin: 0;
+    }
+
+    #content {
+        min-height: 9rem;
+    }
+
+    #date,
+    #content {
+        padding-left: 2rem;
+        position: relative;
+    }
+    #content::before {
+        content: "";
+        padding: 2px;
+        background-color: var(--sec-color-three);
+        position: absolute;
+        left: 0;
+        top: 8px;
+        height: 92%;
+
+    }
+
+    #date {
+        margin-top: .7rem;
+    }
+
+    #no {
+        position: absolute;
+        left: -15px;
+        background: var(--primary-color);
+        /* padding: .7rem; */
+        /* padding-block: 0; */
+        font-size: medium;
+        border-radius: 50%;
+        width: 32px;
+        text-align: center;
+        
+    }
+
+    @media (min-width: 710px) {
+        .timeline {
+            display: grid;
+            /* align-items: flex-end; */
+            grid-template-columns: repeat(2, 1fr);
+            
+        }
+        .timeline:nth-child(even) div#content p,
+        .timeline:nth-child(even) div#content h4{
+          text-align: start;  
+        }
+
+        .timeline:nth-child(even) div#date p{
+            text-align: end !important;
+            padding-right: 45px;
+            
+        }
+
+        .timeline:nth-child(even) div#content {
+            padding-left: 60px !important;
+        }
+        .timeline:nth-child(even) div#content::before {
+            left: 0 !important;
+        }
+        .timeline:nth-child(even) div:first-of-type{
+            order: 2;
+        }
+        .timeline:nth-child(even) div#date #no {
+            left: 98% !important;
+        }
+        
+        
+        #date p {
+            padding-left: 30px;
+        }
+        .timeline #date {
+            align-self: flex-end;
+            
+        }
+        .timeline #content {
+            
+            padding-right: 50px;
+            
+        }
+        .timeline #content h4 {
+            padding-top: 3rem;
+        }
+        .timeline #content p,
+        .timeline #content h4{
+            text-align: end;
+        }
+        .timeline div {
+            flex-basis: 50%;
+        }
+
+        #content::before {
+        left: 100% !important;
+        }
+        #content::before {
+            height: 60% !important;
+        }
+
+        article {
+        margin-block: 1rem;
+        }
+    
+    }
+</style>

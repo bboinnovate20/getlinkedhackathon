@@ -1,0 +1,116 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Decorated from "../components/Decorated.astro";
+import Form from '../components/Form.astro';
+import Footer from '../components/Footer.astro'
+import Section from "../components/Section.astro";
+import BusyIcon from '../components/BusyIcons.astro';
+import SuccessFeedbak from '../components/SuccessFeedback.astro';
+import Nav from '../components/Nav.astro';
+---
+
+<Layout title="GetLinked | Contact">
+    <!-- <SuccessFeedbak/> -->
+    <Section general={false}>
+        <BusyIcon iconName="star" style="width:1rem; right:2rem; top: 15rem"/>
+        <BusyIcon iconName="star" style="width:1rem; right:2rem; bottom: 15rem"/>
+        <BusyIcon iconName="starwhite" style="width:1rem; opacity: .5; left:1rem; top: 45%"/>
+        <Decorated icon="<" />
+
+        <div class="lg-screen-nav">
+            <Nav link=
+            {[
+                {'name': 'Timeline', 'path': '/#sec-5',}, 
+                {'name': 'Overview', 'path': '/#overview'}, 
+                {'name': 'FAQs', 'path': '/#sec-5-main'}, 
+                {'name': 'Contact', 'path': '/contact'}, 
+            ]}></Nav>
+
+        </div>
+
+
+        <div class="container contact">
+            <Form other={true} cat_size={true} image="/vendors/img/register.png" fields={[
+                
+                {
+                    name: "team_name",
+                    placeholder: "Enter the name of your group",
+                    tag: "input",
+                    label: "Team's Name"
+                },
+                {
+                    name: "phone_number",
+                    placeholder: "Enter your phone number",
+                    tag: "input",
+                    label: "Team's Name"
+                },
+                {
+                    name: "email",
+                    tag: "input",
+                    type: "email",
+                    label: "Email",
+                    placeholder: "Enter your email address"
+                },
+                {
+                    name: "project_topic",
+                    tag: "input",
+                    label: "Project Topic",
+                    placeholder: "What is your project topic"
+                }
+               
+                
+            ]}>
+            <h1 class="font-m-bold">Register</h1>
+            
+            <div id="movement">
+                <p class="font-m-bold">Be Part of this movement!</p>
+                <img src="/vendors/img/movement.png" alt="movements">
+            </div>
+            <h1>CREATE YOUR ACCOUNT</h1>
+        </Form>
+        </div>
+    
+        <Footer/>
+    </Section>
+</Layout>
+
+<style>
+    img {
+        width: 100%;
+    }
+    #movement {
+        display: flex;
+        align-items: flex-start;
+    }
+    
+    #movement img{
+        width: 30%;
+        object-fit: cover;
+        padding-left: .5rem;
+    }
+
+    .contact {
+        margin-top: 4rem;
+        padding-top: 3rem;
+        color: #fff;
+    }
+    
+    #contact-form h1 {
+        color: var(--sec-color-three);
+        font-family: 'ClashDisplaySemiBold';
+        line-height: 2.5rem;
+    }
+    .lg-screen-nav {
+            display: none;
+        }
+    
+    @media (min-width: 710px) {
+        .lg-screen-nav {
+            display: block;
+        }
+        .contact{
+            margin-top: 0;
+        }
+
+    }
+</style>

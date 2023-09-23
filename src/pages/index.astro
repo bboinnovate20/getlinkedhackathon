@@ -1,0 +1,876 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+import Nav from '../components/Nav.astro';
+import Section from '../components/Section.astro';
+import Button from '../components/Button.astro';
+import Timer from '../components/Timer.astro';
+import BusyIcons from '../components/BusyIcons.astro';
+import QuesAns from '../components/QuesAns.astro';
+import TimeLineCard from '../components/TimeLineCard.astro';
+import BrandLogo from '../components/BrandLogo.astro';
+---
+
+<Layout title="GetLinked">
+	<main>
+		<Nav link=
+		{[
+			{'name': 'Timeline', 'path': '/#sec-5',}, 
+			{'name': 'Overview', 'path': '/#overview'}, 
+			{'name': 'FAQs', 'path': '/#sec-5-main'}, 
+			{'name': 'Contact', 'path': '/contact'}, 
+		]}></Nav>
+
+		<!-- section 1 -->
+		<Section general={false} >
+			<div class="ignite-main" id="overview">
+				<p id="ignite-word"> 
+					<em>
+						Igniting a Revolution in HR Innovation
+					</em>
+				</p>
+				<img id="line" src="/vendors/icons/line-curve.svg" alt="line curve">
+			</div>
+			<div class='lg-screen-lay'>
+				<div id="header-head-outer-1">
+					<div id="header-head" class="flex">
+						<h1>getlinked Tech</h1>
+						<div id="header-head-inner" class="flex">
+							<h1>Hackathon<span>1.0</span></h1>
+							<img src="/vendors/icons/chain-9365116-7621444.png" alt="chain">
+							<img src="/vendors/icons/1f4a5.png" alt="spark">
+						</div>
+						<p>Participate in getlinked tech Hackathon <br> 2023 stand a chance to win a Big prize </p>
+					</div>
+					<Button name='Register' action='/register'></Button>
+					<Timer/>
+				</div>
+				<div id="header-image">
+					<img id="glass-man" src="/vendors/img/man-wearing-smart-glasses-touching-virtual-screen 1.png" alt="man wearing glass">
+					<img id="glow" src="/vendors/img/glow-image.png" alt="glow image ">
+					<BusyIcons iconName='star' style=''/>
+				</div>
+			</div>
+
+
+		</Section>
+		
+
+		<!-- section 2 -->
+		<Section>
+			<div class="lg-screen-lay-grid">
+				<div id="section-two">
+					<p id="big-idea-txt">The Big <br> Idea!</p>
+					<BusyIcons iconName='star' style='left: 15%; top: 30%; width: 15px'/>
+					<img id="big-idea" src="/vendors/img/the big idea.png" alt="" >
+					<BusyIcons iconName='' style='bottom: -50px; left: 45%; width: 2.5rem'/>
+				</div>
+	
+				<div id="section-two-side-two">
+					<h1>Introduction to getlinked <br> <span class="sec-color-3">techHackathon1.0</span> </h1>
+					<p>Our tech hackathon is a melting pot of visionaries, and its purpose is as clear as day: to shape the future. Whether you're 
+						a coding genius, a design maverick, or a concept wizard, you'll have the chance to transform your ideas into reality. Solving 
+						real-world problems, pushing the boundaries of technology, and creating solutions that can change the world, that's what we're all about!</p>
+				</div>
+			</div>
+		</Section>
+
+		<!-- section 3 -->
+		<Section>
+			<div class="lg-screen-lay-grid change-direction">
+				<div class="cent-img">
+					<img id="sec-3-img" src="/vendors/img/7450159 1.png" alt="">
+				</div>
+				<div id="section-two-side-three" class="par-container">
+					<h1>Rules and <br> <span class="sec-color-4">guidelines</span> </h1>
+					<p class="paragraph-reg">Our tech hackathon is a melting pot of  visionaries, and its purpose is as clear as day: to shape the future. Whether you're a coding genius, a design maverick, or a concept wizard, you'll have the chance to transform your ideas into reality. Solving real-world problems, pushing the boundaries of  technology, and creating solutions that can  change the world, that's what we're all about!</p>
+				</div>
+			</div>
+		</Section>
+
+		<!-- section 4 -->
+		<Section>
+			<div class="lg-screen-lay-grid">
+				<img src="/vendors/img/8046554.png" alt="two people weighing chart and flower growing">
+				<div id="section-four-side-two" class="par-container">
+					<h1>Judging Criteria <br> <span class="sec-color-4">Key Attributes</span> </h1>
+					<p class="paragraph-reg"><span class="sec-color-4 paragraph-bold">Innovation and Creativity:</span>  Evaluate the uniqueness and creativity of the solution. Consider whether it addresses a real-world problem in a novel way or introduces innovative features.</p>
+					<p class="paragraph-reg"> <span class="sec-color-4 paragraph-bold">Functionality:</span>  Assess how well the solution works. Does it perform its intended functions effectively and without major issues? Judges would consider the completeness and robustness of the solution.</p>
+					<p class="paragraph-reg" ><span class="sec-color-4 paragraph-bold">Impact and Relevance:</span> Determine the potential impact of the solution in the real world. Does it address a significant problem, and is it relevant to the target audience? Judges would assess the potential social, economic, or environmental benefits.</p>
+					<p class="paragraph-reg"><span class="sec-color-4 paragraph-bold">Technical Complexity:</span> Evaluate the technical sophistication of the solution. Judges would consider the complexity of the code, the use of advanced technologies or algorithms, and the scalability of the solution.</p>
+					<p class="paragraph-reg"><span class="sec-color-4 paragraph-bold">Adherence to Hackathon Rules:</span> Judges will Ensure that the team adhered to the rules and guidelines of the hackathon, including deadlines, use of specific technologies or APIs, and any 
+					other competition-specific requirements.</p>
+	
+					<Button name='Read More' action='' astyle="padding-inline:2rem; padding-block: 1rem" style="margin-top:1.5rem"></Button>
+				</div>
+
+			</div>
+		</Section>
+
+		<!-- section 5 -->
+		<Section>
+			<div class="lg-screen-lay-grid" id="sec-5-main">
+				<div class="par-container">
+					<h1>Frequently Ask <br> <span class="sec-color-4">Question</span> </h1>
+					<p>We got answers to the questions that you might want to ask about <span class="paragraph-bold">getlinked Hackathon 1.0</span></p>
+					<div>
+						<QuesAns question="Can I work on a project I started before the hackathon?" answer='Yes, sure, you can work for on the projects' ></QuesAns>
+						<QuesAns question="What happens if I need help during the hackathon?" answer='We created a community, you can reach out to us there, lots of devs there are willing to help' ></QuesAns>
+						<QuesAns question="What happens if I don't have an idea for a project?" answer='You can research on about great project ideas online and brainstorm on that' ></QuesAns>
+						<QuesAns question="Can I join a team or do I have to come with one?" answer='Yes, sure, you join a team' ></QuesAns>
+						<QuesAns question="What happens after the hackathon ends" answer='We will announce the Winner, and no matter the result at least everybody learn' ></QuesAns>
+						<QuesAns question="Can I work on a project I started before the hackathon?" answer='Yes, sure, you can work for on the projects' ></QuesAns>
+					</div>
+				</div>
+				<div id="sec-5">
+					<img class="quest"  id="first" src="vendors/icons/quest.png" alt="">
+					<img class="quest" id="second" src="vendors/icons/quest.png" alt="">
+					<img class="quest" id="third" src="vendors/icons/quest.png" alt="">
+					<img src="vendors/img/questionsthinking.png" alt="man thinking and questioning himself">
+				</div>
+			</div>
+		</Section>
+
+		<!-- section 6 -->
+		<Section>
+			<div class="container" id="sec-5">
+				<h1>Time Line </h1>
+				<p class="paragraph-reg" style="font-size: large;">Here is the breakdown of the time we anticipate using for the upcoming event.</p>
+				<div>
+					<TimeLineCard title='Hackathon Announcement' date='November 18, 2023' no='1' content='The getlinked tech hackathon 1.0 is formally announced to the general public and teams begin to get ready to register'/>
+					<TimeLineCard title='Teams Registration begins' date='November 18, 2023' no='2' content='Interested teams can now show their interest in the getlinked tech hackathon 1.0 2023 by proceeding to register'/>
+					<TimeLineCard title='Teams Registration ends' date='November 18, 2023' no='3' content='Interested Participants are no longer Allowed to register'/>
+					<TimeLineCard title='Announcement of the accepted teams and ideas' date='November 18, 2023' no='4' content='All teams whom idea has been accepted into getlinked tech hackathon 1.0 2023 are formally announced'/>
+					<TimeLineCard title='Getlinked Hackathon 1.0 Offically Begins' date='November 18, 2023' no='5' content='Accepted teams can now proceed to build their ground breaking skill driven solutions'/>
+					<TimeLineCard title='Demo Day' date='November 18, 2023' no='6' content='Teams get the opportunity to pitch their projects to judges. The winner of the hackathon will also be announced on this day'/>
+				</div>
+			</div>
+		</Section>
+
+		<!-- section 7 -->
+		<Section>
+			<div class="container">
+				<h1>Prizes and<br> <span class="sec-color-4">Rewards</span> </h1>
+				<div>
+					<p>Highlight of the prizes or rewards for winners and for participants.</p>
+					<div class="lg-screen-lay-grid">
+						<div>
+							<img src="/vendors/img/9486889.png" alt="winning cup">
+						</div>
+						<div id="award-layout">
+							<div>
+								<img src="vendors/img/gold_medal.png" alt="gold medal">
+								<h4>1st <br> Runner</h4>
+								<h3>N400,000</h3>
+							</div>
+							<div>
+								<img src="vendors/img/silver_medal.png" alt="silver medal">
+								<h4>2nd <br> Runner</h4>
+								<h3>N300,000</h3>
+							</div>
+	
+							<div>
+								<img src="vendors/img/bronze_medal.png" alt="bronze medal">
+								<h4>3rd <br> Runner</h4>
+								<h3>N150,000</h3>
+							</div>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</Section>
+
+		<Section>
+			<div class="container" id="sec-8">
+				<div>
+					<h1>Partners and Sponsors</h1>
+					<p class="paragraph-reg">Getlinked Hackathon 1.0 is honored to have the following major companies as its partners and sponsors</p>
+				</div>
+				<div id="sec-8-part">
+					<div>
+						<div>
+							<img class="other" src="/vendors/img/companylogo/liberty1.png" alt="" srcset="">
+						</div>
+						<div>
+							<img src="/vendors/img/companylogo/liberty2.png" alt="" srcset="">
+						</div>
+						<div>
+							<img class="other" src="/vendors/img/companylogo/Winwise logo White colour 1.png" alt="" srcset="">
+						</div>
+					</div>
+					<div>
+						<div>
+							<img class="other" src="/vendors/img/companylogo/wisper logo white.png" alt="" srcset="">
+						</div>
+						<div>
+							<img  src="/vendors/img/companylogo/Paybox.png" alt="" srcset="">
+						</div>
+						<div>
+							<img src="/vendors/img/companylogo/Vizual Plus.png" alt="" srcset="">
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</Section>
+
+		<Section>
+			<div class="container" id="sec-9">
+				<div class="lg-screen-lay-grid">
+
+					<div>
+						<h1>Privacy Policy and <br> <span class="sec-color-4">Terms</span> </h1>
+						<p style="color: grey">Last Updated September 23, 2023</p>
+						<p>Below are our privacy & policy, which outline a lot of goodies. it’s our aim to always take of our participant</p>
+						<div id="licence-policy">
+							<p>At getlinked tech Hackathon 1.0, we value your privacy and are committed to protecting your personal information.This Privacy Policy outlines how we collect, use, disclose, and safeguard your data when you participate in our tech hackathon  event. By participating in our event, you  consent to the practices described in this  policy.</p>
+							<div id="license-p-2">
+								<p class="sec-color-4 font-m-bold" style="margin-bottom:0">Licensing Policy</p>
+								<p class="font-m-bold" style="margin-top:0">Here are terms of our Standard License:</p>
+								<ul>
+									<li class="font-m-reg">The Standard License grants you a non-exclusive right to navigate and register for our event</li>
+									<li class="font-m-reg">You are licensed to use the item available at any free source sites, for your project development</li>
+								</ul>
+			
+								<Button name='Read More' action='' astyle="padding-inline:2rem; padding-block: 1rem" style="display:flex; justify-content:center; width:100%;  margin-top:1.5rem; margin-bottom:3.2rem"></Button>
+							</div>
+						</div>
+					</div>
+					<div id="privacy">
+						<img src="vendors/img/privacy.png" alt="" srcset="">
+						<img src="vendors/img/padlock.png" alt="" srcset="">
+					</div>
+				</div>
+			</div>
+
+		</Section>
+
+		<Section general={false} footer={true}>
+
+			<div class="container" id="sec-10">
+				<div class="lg-screen-lay-ft">
+					<div>
+						<BrandLogo/>
+						<p class="font-m-reg">Getlinked Tech Hackathon is a technology innovation program established by a group of organizations with the aim of showcasing  young and talented individuals in the field of technology</p>
+						<div id="t-o-u">
+							<p>Term of Use</p>
+							<p>Privacy Policy</p>
+						</div>
+					</div>
+	
+		
+					<div id="sec-two-p-two">
+						<p class="font-m-bold sec-color-3">Useful Links</p>
+						<ul>
+							<li><a href="#"> Overview</a></li>
+							<li><a href="#"> Timeline</a></li>
+							<li><a href="#"> FAQs</a></li>
+							<li><a href="#"> Register</a></li>
+						</ul>
+						<div id="social-media">
+							<p class="font-m-bold sec-color-3">Follows Us</p>
+							<span><a href="#"> <img src="/vendors/icons/i.png" alt="instagram"> </a></span>
+							<span><a href="#"> <img src="/vendors/icons/x.png" alt="x twitter"> </a></span>
+							<span><a href="#"> <img src="/vendors/icons/f.png" alt="facebook"> </a></span>
+							<span><a href="#"> <img src="/vendors/icons/l.png" alt="linkedIn"> </a></span>
+						</div>
+					</div>
+	
+					<div id="contact-us">
+						<p class="font-m-bold sec-color-3">Contact Us</p>
+						<div class="contact-comp">
+							<img src="/vendors/icons/call.png" alt="call icon">
+							<p>+234  6707653444</p>
+						</div>
+	
+						<div class="contact-comp">
+							<img src="/vendors/icons/location.png" alt="location icon">
+							<p>27,Alara Street Yaba 100012 Lagos State</p>
+						</div>
+					</div>
+					
+				</div>
+				<p id="copyright">All rights reserved. &copy; getlinked Ltd.</p>
+			</div>
+			
+
+		</Section>
+
+
+	</main>
+
+</Layout>
+
+<style>
+
+	main {
+		margin: auto;
+		color: white;
+		font-size: 20px;
+		line-height: 1.6;
+	}
+
+	a {
+		text-decoration: none;
+	}	
+
+	h1 {
+		margin: 0;
+		font-family: 'ClashDisplaySemiBold';
+		line-height: normal;
+	}
+
+	
+	.cent-img {
+		margin: 0 auto;
+	}
+
+	.sec-color-3 {
+		color: var(--sec-color-three);
+	}
+	.sec-color-4 {
+		
+		color: var(--sec-color-four);
+	}
+
+	/* --section one -- */
+	#ignite-word {
+		font-size: clamp(1.5rem, 4vw, 3rem);
+		font-family: 'ClashDisplaySemiBold';
+		font-weight: bold;
+		
+	}
+	
+	.ignite-main {
+		position: relative;
+	}
+
+	#line {
+		position: absolute;
+		bottom: -10px;
+		right: 20px;
+		max-width: 120px;
+		width: 30%;
+
+	}
+	#header-head-inner,
+	#header-head {
+		align-items: center;
+	}
+	#header-head p {
+		font-size:large;
+	}
+	
+	#header-head-inner h1 span {
+		color: var(--sec-color-three);
+	}
+	
+	#header-head {
+		line-height: normal;
+		flex-direction: column;
+	}
+
+	#header-head h1 {
+		font-family: 'ClashDisplay';
+		font-size: clamp(2.2rem,10vw,4.5rem);
+		margin: 0;
+	}
+	#header-head img {
+		width: 36px;
+		
+		aspect-ratio: 1/1;
+		display: block;
+	}
+	img {
+		width: 100%;
+	}
+
+	#glow {
+		width: 80%;
+	}
+
+	#glass-man {
+		width: 100%;
+	}
+	#header-image{
+		position: relative;
+		max-width: 100%;
+		/* overflow: hidden; */
+	}
+	#glow {
+		position: absolute;
+		left: 10%;
+	}
+	 
+
+	/* ----------- */
+
+	
+	/* section 2 */
+	#big-idea {
+		width: 70%;
+	}
+
+	#section-two {
+		position: relative;
+	}
+	#big-idea-txt {
+		font-size: clamp(1.3rem, 4.5vw, 2rem);
+		font-family: 'ClashDisplay';
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 39%;
+	}
+
+	#section-two-side-two {
+		margin-top: 4rem;
+	}
+
+	/* #section-two-side-two h1 {
+		margin: 0;
+		font-family: 'ClashDisplaySemiBold';
+		line-height: normal;
+	} */
+
+	.par-container p {
+		width: calc(100% - 5rem);
+		margin: 0 auto;
+		margin-top: 1rem;
+		line-height: 2rem;
+	}
+	/* ----------- */
+	
+	/* section-3 */
+	
+	#sec-3-img {
+		width: 80%;
+	}
+	.paragraph-reg,
+	#section-two-side-three p  {
+		font-family: 'Montserrat-Regular';
+	}
+	.paragraph-bold,
+	#section-two-side-three p span {
+		font-family: 'Montserrat-SemiBold';
+	}
+	/* --------- */
+
+	/* section-5 */ 
+	#sec-5 {
+		position: relative;
+	}
+	#sec-5 .quest {
+		width: 2rem;
+		animation: bounce 3s infinite;
+		position: absolute;
+	}
+
+	#sec-5 #first {
+		top: 10%;
+		left: 13%;
+		filter: brightness(70%);
+	}
+
+	#sec-5 #second {
+		top: 5%;
+		left: 35%;
+		width: 40px;
+	}
+
+	#sec-5 #third {
+		left: 60%;
+		top: 10%;
+	}
+
+	#sec-5 img:last-of-type {
+		margin-top: 4rem;
+	}
+	/*  */
+
+	/* section 7 */
+	#award-layout {
+		display: flex;
+		justify-content: space-between;
+		position: relative;
+		
+	}
+
+	#award-layout {
+		font-family: 'Montserrat-Regular';
+		margin-top: 10rem;
+	}
+	#award-layout h4 {
+		margin: 0
+	}
+	#award-layout div h3 {
+		margin: 0;
+		color: var(--sec-color-three);
+		font-size: 1.3rem;
+		font-family: 'Montserrat-SemiBold'
+	}
+
+	#award-layout div {
+		position: relative;
+		flex-basis: 30%;
+		/* height: 9rem; */
+		padding-top: 5rem;
+		padding-bottom: 2rem;
+		
+		justify-content: center;
+		align-items: center;
+		background-color: #d634fe1d;
+		border-radius: .5rem;
+		border: 2px solid var(--sec-color-three);
+	
+	}
+
+	#award-layout div img {
+		max-width: 9rem;
+		position: absolute;
+		top: calc(-50px - 3vw);
+		left: 0;
+		right: 0;
+		
+		/* right: 0; */
+
+	}
+
+	#award-layout div:nth-of-type(1){
+		order: 1;
+		background-color: #8f3aff38;
+		border: 2px solid var(--sec-color-two);
+		transform: translateY(15px)
+	}
+	#award-layout div:nth-of-type(1) h3 {
+		color: var(--sec-color-two);
+	}
+	#award-layout div:nth-of-type(1) img {
+		transform: scale(1.6);
+		top: calc(-80px - 5vw);
+		
+	}
+
+	#award-layout div:nth-of-type(3){
+		order: 2
+	}
+
+
+
+
+	/* ------- */
+
+
+	/* section 8 */ 
+
+	#sec-8-part {
+		padding: 2.5rem;
+		border: 2px solid var(--sec-color-three);
+		border-radius: .5rem
+	}
+	#sec-8-part div {
+		display: flex;
+		position: relative;
+	}
+	#sec-8-part div > div {
+		border-color: var(--sec-color-three);
+			border-style: solid;
+			border-width: 0;
+	}
+	#sec-8-part div:nth-of-type(1) > div:nth-of-type(1) {
+		border-width: 0 3px 3px 0;
+	} 
+
+	#sec-8-part div:nth-of-type(1) > div:nth-of-type(2) {
+		border-width: 0 3px 3px 0;
+	} 
+
+	#sec-8-part div:nth-of-type(1) > div:nth-of-type(3) {
+		border-width: 0 0 3px 0;
+	} 
+
+	#sec-8-part div:nth-of-type(2) > div{
+		padding-top: .8rem;
+		border-width: 0 3px 0 0;
+	} 
+
+	#sec-8-part div:nth-of-type(2) > div:last-of-type{
+		border-width: 0 0 0 0;
+	} 
+
+	
+	#sec-8 img{
+		height: auto;
+		margin: 0 auto;
+		object-fit: contain;
+	}
+	#sec-8 img.other {
+		width: 3rem;
+		/* width: 3 !important; */
+	}
+
+	#sec-8-part div > div{
+		padding: .3rem;
+		padding-inline: 1rem;
+		flex-basis: 33%;
+		position: relative;
+		/* padding: 5rem;
+		width: 3rem;
+		display: block; */
+	}
+
+	#sec-8-part div:nth-of-type(1) > div::before {
+		background-color: var(--sec-color-one);
+		/* background-color: red; */
+		content: "";
+		padding: .2rem;
+		display: block;
+		height: 10px;
+		position: absolute;
+		z-index: 2000;
+		width: 10px;
+		/* top: 0; */
+		right: -10px;
+		bottom: -10px;
+		/* bottom: -1px;
+  		right: -1px; */
+	}
+	
+	#sec-9 p{
+		line-height: 2.5rem
+	}
+
+	#licence-policy {
+		margin-top: 4rem;
+		border: 2px solid var(--sec-color-three);
+		padding-block: 3rem;
+		padding-inline: 1rem;
+		border-radius: 1rem;
+	}
+	#license-p-2 {
+		text-align: left;
+	}
+	ul {
+		list-style: none;
+		/* padding-left: 0; */
+	}
+	#license-p-2 ul li{
+		position: relative;
+		margin-bottom: 3rem;
+	}
+	#license-p-2 ul li::before {
+		content: " ";
+		padding: .8rem;
+		left: -40px;
+		top: 10px;
+		background-image: url('/vendors/icons/item.png');
+		background-size: contain;
+		/* background-color: red; */
+		position: absolute;
+
+	}
+
+	#privacy {
+		position: relative;
+		margin-top:5rem;
+	}
+
+	#privacy img:nth-of-type(1) {
+		position: absolute;
+		top: 0;
+	}
+
+	#privacy img:nth-of-type(2) {
+		margin-top: 9rem;
+	}
+
+	/*  */
+
+
+	/* section 10 */
+	#sec-10 {
+		text-align:left;
+	}
+
+	#t-o-u {
+		display: flex;
+		gap: 1rem;
+	}
+
+	#t-o-u p:last-of-type {
+		border-left: 4px solid var(--sec-color-three);
+		padding-left: 1rem;
+	}
+
+	#sec-two-p-two ul{
+		padding: 0;
+		line-height:3rem
+	}
+
+	#sec-two-p-two ul li a {
+		color: #fff;
+	}
+	.contact-comp,
+	#social-media {
+		display: flex;
+		align-items: center;
+		gap: 1.5rem;
+	}
+	#social-media span {
+		display: block;
+
+		overflow:hidden;
+
+		/* height: .5rem; */
+
+	}
+	#social-media img{
+		object-fit: contain;
+		height: 1.5rem;
+		filter: contrast(80%);
+		
+		transition: all .3s ease;
+		/* hei */
+	}	
+
+	#social-media span:hover img {
+		filter: contrast(100%);
+		transform: scale(1.05);
+		filter: drop-shadow(0 -6mm 4mm #fff)
+	}
+	
+	.contact-comp img {
+		width: 1rem;
+		
+		
+	}
+	.contact-comp p {
+		margin-top: -8px;
+	}
+
+	.contact-comp {
+		width: 50%;
+		align-items: flex-start;
+	}
+
+	#copyright {
+		text-align: center;
+		margin-top: 3rem;
+		margin-bottom: 2rem;
+
+	}
+
+	/* ---------- */
+	@keyframes bounce {
+		from {
+			transform: translateY(-5px);
+		}
+		60% {
+			transform: translateY(0px);
+		}
+		to {
+			transform: translateY(-5px);
+		}
+	}
+
+
+	/* responsiveness */
+
+	@media (min-width: 710px) {
+		
+		#ignite-word {
+			font-size: clamp(1.2rem, 2vw, 1rem);
+			text-align: end;
+			
+		}
+	
+		#line {
+			right: 0;
+			bottom: -7px;
+		}
+		.lg-screen-lay-ft,
+		.lg-screen-lay{
+			display: flex;
+		}
+		.lg-screen-lay-ft{
+			justify-content: space-between;
+			width: 100%;
+		}
+		.lg-screen-lay-ft div{
+			flex-basis: 30%;
+		}
+
+		.lg-screen-lay #header-head-outer-1 {
+			flex-basis: 70%
+		}
+		#header-image {
+			flex-basis: 50%;
+		}
+		#header-head {
+			align-items: flex-start;
+		}
+		#header-head-outer-1 {
+			text-align: start;
+		}
+
+		#header-head p {
+			font-size:x-large;
+		}
+
+		#header-head-inner img {
+			width: 4rem;
+		}
+
+		.lg-screen-lay-grid {
+			display: grid;
+			align-items: center;
+			grid-template-columns: repeat(2, 1fr);
+			text-align: start;
+		}
+		#big-idea-txt {
+			text-align: center;
+			left: -175px;
+			right: 0;
+		}
+		.paragraph-reg {
+			margin: 0 !important;
+		}
+
+		#sec-3-img {
+			width: 70%;
+		}
+
+		.change-direction div:first-of-type{
+			order: 2;
+		}
+		#section-four-side-two p{
+			font-size: medium;
+		}
+
+		
+		#sec-5-main p {
+			margin-left: 0 !important;
+		}
+
+		#award-layout{
+			text-align: center;
+		}
+		#award-layout img{
+			top: -110px !important;
+		}
+
+		#sec-8-part {
+			margin-top: 30px;
+		}
+		
+		#sec-8 {
+			max-width: 600px;
+			margin: 0 auto;
+			display: grid;
+			justify-items: center;
+		}
+	}
+
+</style>

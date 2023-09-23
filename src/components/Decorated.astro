@@ -1,0 +1,55 @@
+---
+interface Props {
+    icon: string;
+}
+
+const {icon} = Astro.props;
+
+---
+
+<a href="/" id="responsive-back">
+<div id="close-list">
+        <p>{icon}</p>
+    </div>
+</a>
+
+<style>
+
+    a {
+        text-decoration: none;
+        color: #fff;
+    }
+    #close-list {
+ 
+    position: absolute;
+    color: #FFF;
+    background: var(--sec-color-one);
+    background-clip: padding-box; 
+    border: solid 2px transparent; 
+    border-radius: 100%;
+    padding-inline: .7rem;
+    left: 3rem;
+    cursor: pointer;
+    line-height: 0;
+
+    }
+
+
+#close-list::before {
+    content: '';
+
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    z-index: -1;
+    margin: -2px; /* !importanté */
+    border-radius: inherit; /* !importanté */
+    background: var(--primary-color);
+
+    }
+
+    @media (min-width: 710px) {
+        #responsive-back {
+            display: none;
+        }
+    }
+</style>

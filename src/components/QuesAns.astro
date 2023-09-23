@@ -1,0 +1,109 @@
+
+
+---
+interface Props {
+    question: string;
+    answer: string;
+}
+
+const {question, answer} = Astro.props;
+---
+
+
+<section class="container">
+    <div class="show">
+        <p>{question}</p>
+        <div >
+            <p id="hor">|</p>
+            <p id="ver">|</p>
+        </div>
+    </div>
+    <p id="answer" style="color:var(--sec-color-three)">{answer}</p>
+    
+</section>
+
+<style>
+    section p {
+        font-family: 'Montserrat-Regular';
+        font-size: medium;
+        text-align: left;
+    }
+
+    #show {
+        font-size: larger;
+        cursor: pointer;
+    }
+    #answer {
+        display: none;
+        transition: opacity .3s ease;
+    }
+    section div {
+        display: flex;
+    }
+
+    .show,
+    section {
+        justify-content: space-between;
+        
+    }
+    section {
+    border-bottom: 2px solid var(--sec-color-four);
+    }
+    .show {
+        position: relative;
+        cursor: pointer;
+        transition: all .3s ease;
+    }
+
+    #ver {
+        transform: rotate(90deg);
+        position: absolute;
+        top: 1%;
+    }
+
+    #hor {
+        transition: all .3s ease;
+    }
+
+    .flow {
+        transform: translateY(-10px);
+        opacity: 0;
+    }
+
+    @media (min-width: 710px) {
+        .container {
+            margin: 0;
+        }
+    }
+</style>
+
+<script>
+    const myAnswer = document.querySelector("#answer");
+    const show = document.querySelectorAll('.show');
+    
+    if(show) {
+        
+        show.forEach((plusel) => {
+            
+            const immElementF: any= show[0].nextElementSibling
+            immElementF.style.display = 'block';
+            show[0].querySelector("#hor")?.classList.add('flow');
+
+            const immElement: any= plusel.nextElementSibling            
+            const eachPlus = plusel.querySelector("#hor");
+            plusel.addEventListener('click', (e) => {
+                toggleShow(immElement, eachPlus);   
+            })
+        })
+    }
+
+    function toggleShow(nextElement: any, hor: any) {
+        const myAnswerEl = myAnswer as HTMLElement;
+        if(myAnswerEl != null) {
+            
+            if(nextElement.style.display == 'none' || nextElement.style.display == '') {hor?.classList.add('flow'); nextElement.style.display = 'block'}
+            else {hor?.classList.remove('flow'); nextElement.style.display = 'none'}
+        }
+    }
+
+</script>

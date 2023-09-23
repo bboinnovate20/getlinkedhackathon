@@ -1,0 +1,51 @@
+<footer>
+    <div id="responsive-nav">
+        <div>
+            <div>
+                <p>Share On</p>
+                
+            </div>
+            <div id="social-media">
+                <span><a href="#"> <img src="/vendors/icons/i.png" alt="instagram"> </a></span>
+                <span><a href="#"> <img src="/vendors/icons/x.png" alt="x twitter"> </a></span>
+                <span><a href="#"> <img src="/vendors/icons/f.png" alt="facebook"> </a></span>
+                <span><a href="#"> <img src="/vendors/icons/l.png" alt="linkedIn"> </a></span>
+            </div>
+
+        </div>
+    </div>
+</footer>
+
+<style>
+    #responsive-nav div p{
+        color: var(--sec-color-three);
+        text-align: center;
+    }
+    #responsive-nav {
+        display: flex;
+        justify-content: center;
+        margin-top: 1rem;
+    }
+
+    #social-media {
+        display: flex;
+		/* display: flex;
+		align-items: center; */
+		gap: 1rem;
+	}
+	#social-media img{
+		object-fit: contain;
+		height: 1.2rem;
+		filter: contrast(80%);
+		
+		transition: all .3s ease;
+		/* hei */
+	}	
+
+	#social-media span:hover img {
+		filter: contrast(100%);
+		transform: scale(1.05);
+		filter: drop-shadow(0 -6mm 4mm #fff)
+	}
+	
+</style>

@@ -1,0 +1,28 @@
+---
+interface Props {
+    iconName: string;
+    style: string;
+}
+
+const { iconName, style } = Astro.props;
+---
+
+
+{
+    iconName == 'star' && <img id="star" style={style} src="/vendors/icons/sata.svg" alt=""/>
+    
+}
+{
+    iconName == 'rolline' && <img id="rolline" style={style} src="/vendors/icons/arrow.svg" alt=""/>
+}
+
+{
+    iconName == 'starwhite' && <img id="star" style={style} src="/vendors/icons/starwhite.png" alt=""/>
+}
+<style>
+    #rolline,
+    #star {
+        position: absolute;
+        /* width: 15px; */
+    }
+</style>

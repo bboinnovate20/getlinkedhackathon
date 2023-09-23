@@ -1,0 +1,77 @@
+
+---
+interface Props {
+    general?: boolean
+    footer?: boolean
+    
+}
+
+const {general = true, footer=false} = Astro.props;
+
+---
+<section class="section" style={ general ? "border-bottom: 2px solid rgba(255, 255, 255, 0.18); padding-block: .5rem 5rem;": ""}>
+    <div class={general ? "inner-con-sec-g" : footer ? "": "inner-con-sec"} >
+        <slot/>
+    </div>
+</section>
+
+<style>
+    
+    section {
+        max-width: 1200px;
+        width: calc(100% - 1.5rem);
+        margin: 2rem auto;
+        text-align: center;   
+        position: relative;
+        
+        /* overflow: hidden; */
+        
+    }
+  
+    .inner-con-sec {
+        position: relative;   
+        
+    }
+
+    .inner-con-sec-g::before{
+
+        left: -50%;
+        top: -9%;
+        
+    }
+    .inner-con-sec::before
+    {
+        left: -30%;
+    top: -9%;
+    
+    }
+    .inner-con-sec-g::after {
+        right: -50%;
+        bottom: 20%;
+    }
+
+    .inner-con-sec-g::after,
+    .inner-con-sec-g::before,
+    .inner-con-sec::before {
+        position: absolute;
+        z-index: -2;
+        content: " ";
+        
+        width: 90%;
+        height: 30rem;
+        
+        background-color: var(--sec-color-two);
+        mask-image: radial-gradient(rgba(0, 0, 0, .6),transparent 65%);
+        -webkit-mask-image: radial-gradient(rgba(0,0,0,.6),transparent 65%);
+    }
+</style>
+
+
+<!-- /* background-image: url("/vendors/img/purple-f.png"); */
+/* background-color: var(--sec-color-two); */
+
+/* border-radius: 100%; */
+
+/* -webkit-mask-image: radial-gradient(rgba(0,0,0,.2),transparent 50%);
+mask-image: radial-gradient(rgba(0, 0, 0, .2),transparent 50%); */
+/* mask-image: radial-gradient(rgba(0,0,0,.65),transparent 100%); -->

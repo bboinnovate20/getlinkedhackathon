@@ -1,0 +1,292 @@
+---
+import Button from './Button.astro'
+
+interface Props {
+    link: {
+        name: string,
+        path: string,
+        section?: string
+    }[]
+}
+
+const {link} = Astro.props;
+---
+
+<header>
+    <nav class="flex nav-lg">
+        <a href="/">
+            <span id="brand">get <span>linked</span> </span>
+
+        </a>
+        <div>
+            <div id="responsive-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div id="list">
+                <div id="close-list">
+                    <p>X</p>
+                </div>
+                <ul>
+                {link.map(({name, path}) => 
+                        <li><a href={path}>{name}</a></li>
+                       )}
+                <li>
+                    <Button name='Register' action='/register' astyle="padding-inline:1rem; padding-block: 1rem" style="margin-top:1.5rem; min-width:10rem; "></Button>
+                </li>
+                 </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<style >
+    header {
+        border-bottom: 2px solid rgba(255, 255, 255, 0.18);
+    }
+    #brand {
+        color: #fff;
+    }
+    #brand span{
+        color: var(--sec-color-three);
+        
+    }
+    .grid {
+        display: grid;
+    }
+    .flex {
+        display: flex;
+    }
+    nav {
+        grid-template-columns: repeat(2, 1fr);
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 2rem;
+        padding-bottom: 1rem;
+        padding-inline: 2rem;
+         
+    }
+
+    #brand {
+        font-size: clamp(1.3rem, 2vw, 2rem);
+        display: block;
+        font-family: 'ClashDisplay';
+    }
+    #responsive-icon {
+        cursor: pointer;
+    }
+
+    #responsive-icon span {
+        padding: .1rem;
+        background-color: #fff;
+        width: 25px;
+        border-radius: 1rem;
+        display: block;
+        margin-bottom: .2rem;
+        cursor: pointer;
+        transition: all .3s ease;
+    }
+
+    
+    #responsive-icon span:nth-of-type(3),
+    #responsive-icon span:nth-of-type(1) {
+        width: 40%;
+    }
+
+    #responsive-icon span:nth-of-type(3) {
+        width: 40%;
+        margin-left: auto;
+    }
+
+    #list {
+        position: absolute;
+        right: 0;
+        top: 0;
+        left: 0;
+        z-index: 100;
+        bottom: 0;
+        background-color: var(--sec-color-one);
+        padding-block: 3rem;
+        padding-inline: 2rem;
+        transition: all .3s ease;
+        transform: translateY(-50%);
+        opacity: 0;
+        visibility: hidden;
+        height: 0;
+    }
+
+    #list ul li {
+        opacity: 0;   
+        transform: translateY(-15px);
+        font-family: 'Montserrat-SemiBold';
+    }
+
+    #list ul li a {
+        display: block;
+        width: 100%;
+        padding-top: 1.5rem;
+        transition: all .3s ease;
+        
+    }
+
+    #list ul li a:hover {
+        font-size: 150%;
+        transform: translateX(-5px);
+        background: var(--primary-color);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+
+    .show-resp-nav {
+        opacity: 1 !important;
+        transform: translateY(0) !important; 
+        visibility: visible !important;
+        height: 100% !important;
+        /* 
+        
+        opacity: 1;
+        height: 100%; */
+    }
+
+    .show-resp-nav ul li {
+        animation: dropdown 1s linear;
+        animation-fill-mode: forwards;
+        
+    }
+
+    @keyframes dropdown {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    
+
+    #list ul {
+        list-style: none;
+        padding: 0;
+        margin-top: 2rem;
+    }
+    #list ul a {
+        text-decoration: none;
+        color: #fff;
+    }
+
+    #list ul li {
+        
+    }
+    
+
+    #responsive-icon:hover span:nth-of-type(1),
+    #responsive-icon:hover span:nth-of-type(3) {
+        width: 25px;
+    }
+
+
+        #close-list {
+ 
+            position: absolute;
+            color: #FFF;
+            background: var(--sec-color-one);
+            background-clip: padding-box; 
+            border: solid 2px transparent; 
+            border-radius: 100%;
+            padding-inline: .6rem;
+            right: 3rem;
+            cursor: pointer;
+         
+        }
+    
+        
+        #close-list::before {
+        content: '';
+        
+        position: absolute;
+        top: 0; right: 0; bottom: 0; left: 0;
+        z-index: -1;
+        margin: -2px; /* !importanté */
+        border-radius: inherit; /* !importanté */
+        background: var(--primary-color);
+    
+    }
+    #close-list p {
+        line-height: 0;
+    }
+
+
+    @media (min-width: 710px) {
+        #responsive-icon {
+            display: none;
+        }
+
+        #list {
+            position: relative;
+            display: flex;
+            height: 100%;
+            visibility: visible;
+            opacity: 1;
+            transform: translateY(0);
+            padding: 0;
+        }
+
+        #list ul {
+            display: flex;
+            align-items: center;
+            font-size: 1rem;
+            text-align: center;
+            gap: 1.2rem;
+            margin: 0;
+            padding-bottom: 1rem;
+        }
+
+        #list ul li {
+        opacity: 1;   
+        transform: translateY(0);
+        }
+        #close-list {
+            display: none;
+        }
+        .nav-lg {
+            justify-content: space-between;
+            padding-block: 0;
+        }
+
+        #brand {
+            font-size: clamp(2rem, 2vw, 2rem);
+        }
+        #list ul li a {
+            transition: all .3s ease;
+        }
+         
+        #list ul li a:hover {  
+            font-size: 101%;
+            transform: translate(0);
+            background: var(--primary-color);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+	}
+
+</style>
+
+<script>
+    const toggleB = document.querySelector('#responsive-icon');
+    const list = document.querySelector("#list");
+    const close = document.querySelector("#close-list");
+
+    toggleB?.addEventListener('click', () => {
+        list?.classList.add('show-resp-nav');
+    })
+
+    close?.addEventListener('click', () => {
+        list?.classList.remove('show-resp-nav');
+    })
+
+</script>

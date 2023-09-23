@@ -1,0 +1,48 @@
+---
+import Button from "./Button.astro";
+import BusyIcon from "./BusyIcons.astro";
+---
+
+<div id="pop-up">
+    <section class="container" id="success-comp">
+        <BusyIcon iconName="star" style="width:1rem; left:5rem; top: 3rem"/>
+        <BusyIcon iconName="star" style="width:1rem; right:5rem; bottom: 6rem"/>
+        <img src="/vendors/img/congratulation.png" alt="congratulation image">
+        <h1>Congratulations you have successfully Registered!</h1>
+        <p>Yes, it was easy and you did it! check your mail box for next step <img width="2px" src="/vendors/img/registernote.png" alt=""> </p>
+    
+        <Button name='Register' action='' astyle="width:100%" style="width:90%; margin-block:2rem"></Button>
+    </section>
+
+</div>
+
+<style>
+
+    #pop-up {
+        position: fixed;
+        top: 0;
+        z-index: 2000;
+        left: 50%;
+        transform: translateX(-50%);    
+    }
+    #success-comp {
+        color: #fff;
+        text-align: center;
+        font-family: 'Montserrat-Regular' !important;
+        display: grid;
+        justify-items: center;
+        
+    }
+    #success-comp p {
+        width: 80%;
+        line-height: normal;
+    }
+    #success-comp > img {
+        width: 100%;
+    }
+    #success-comp {
+        border-radius: .5rem;
+        padding: .5rem;
+        border: 2px solid var(--sec-color-three);
+    }
+</style>

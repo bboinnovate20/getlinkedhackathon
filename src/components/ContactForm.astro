@@ -1,0 +1,217 @@
+---
+import Button from "./Button.astro";
+
+interface Props {
+    cat_size?: boolean,
+    
+    other?: boolean,
+    fields: {
+        name: string,
+        placeholder: string,
+        tag: 'input' | 'textarea' | 'dropdown',
+        type?: "text" | "email",
+        label?: string
+    }[]
+
+}
+
+const {cat_size = false, fields, other=false} = Astro.props;
+---
+
+<form action="" id="contact-form">
+    <div class="loading sticky">
+        <h1>Loading, please wait</h1>
+    </div>
+        <div class="success">
+            <h1>Thanks for your Feedback</h1>   
+            <Button name='Go to HomePage' action='/register'></Button>
+        </div>
+        <div >
+            <slot/>
+            <section class="form-group">
+                {
+                    fields.map((field) => {
+                        return <div class="input-form">
+                            {field.label != '' && <label>{field.label}</label>}
+                        {field.tag == 'input' && <input name={field.name} type={field.type || "text"} required placeholder={field.placeholder} autofocus>}
+                        {field.tag == 'textarea' &&  <textarea name="message" placeholder="Message" id="" cols="30" rows="10" required></textarea>}
+                        </div>})
+                }
+            </section>
+    
+            <div id="btn-submit" style="display:grid; justify-content: center; width:100%;">
+                <Button name='Register' action='/register' type="submit"></Button>
+
+            </div>
+        </div>
+
+    </div>
+</form>
+
+<style>
+ 
+
+    form {
+        font-family: 'Montserrat-Regular'
+    }
+   
+    
+
+    #contact-form {
+        text-align: left;
+    }
+
+    #contact-form h1 {
+        color: var(--sec-color-three);
+    }
+    .input-form textarea,
+    .input-form input,
+    .input-form {
+        width: 100%;
+    }
+
+    .input-form {
+        margin-bottom: 2rem;
+        
+    }
+
+    .loading,
+    .success {
+        display: none !important;
+        text-align: center;
+    }
+
+
+    .category select,
+    .input-form input,
+    .input-form textarea {
+        border: 2px solid #fff;
+        background-color: transparent;
+        border-radius: .5rem;
+        padding-block: .9rem;
+        padding-inline: 1.5rem;
+        font-size: 1.2rem;
+        color: #fff;
+        transition: all .4s ease;
+        background-color: transparent;
+        outline: none;
+    }
+
+    .input-form textarea {
+        font-family: 'Montserrat-Regular';
+        /* font-size: 1rem; */
+    }
+    .input-form input {
+    }
+    .input-form textarea:valid,
+    .input-form input:valid {
+        border-color: var(--sec-color-two);
+    }
+
+    .input-form textarea:focus,
+    .input-form input:focus {
+        border-color: var(--sec-color-two);
+        box-shadow: 1px 1px 10px var(--sec-color-two);
+    }
+
+    .sticky {
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        position: fixed;
+    }
+
+    .show-success {
+        display:block !important;
+
+    }
+    .show {
+        display: inline-block !important;
+        
+        background-color: #fff;
+        border-radius: 1rem;
+        top: 30%;
+        // left: 45%;
+        width: 50%;
+        z-index: 100;
+        padding:2rem;
+    }
+
+    @media (min-width: 710px) {
+
+          
+    
+        #btn-submit {
+            justify-content: stretch !important;
+        }
+    }
+
+</style>
+
+<script>
+
+    const baseUrl:string = "https://backend.getlinked.ai";
+
+    const form = document.getElementById("contact-form");
+
+    form?.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            submitForm();
+    })
+
+    const loading = document.querySelector(".loading");
+
+    const success = document.querySelector(".success");
+
+    async function submitForm() {
+        const button = document.querySelector("#btn-submit") as HTMLButtonElement;
+        const form = document.querySelector("#contact-form") as HTMLFormElement;
+    
+        const formData: { [key: string]: string } = {}; 
+
+        form.querySelectorAll("input").forEach((input:any) => {
+           formData[input.name] = input.value;
+
+        })
+        
+        form.querySelectorAll("textarea").forEach((input:any) => {
+           formData[input.name] = input.value;
+
+        })
+        
+        try {
+            button.style.pointerEvents = 'none';
+            button.style.opacity = '0.5';
+            loading?.classList.add("show");
+
+            
+            const response = await fetch(`${baseUrl}/hackathon/contact-form`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            })
+    
+            const data = await response.json();
+
+            if(data) {
+                loading?.classList.remove("show");
+                success?.classList.add("show-success");
+                button.style.pointerEvents = 'all';
+                button.style.opacity = '1';
+                console.log(data);
+            }
+            
+        } catch (error) {
+            alert(error);
+        }
+
+        
+    }
+
+
+
+
+    </script>
