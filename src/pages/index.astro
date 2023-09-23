@@ -34,7 +34,11 @@ import BrandLogo from '../components/BrandLogo.astro';
 			<div class='lg-screen-lay'>
 				<div id="header-head-outer-1">
 					<div id="header-head" class="flex">
-						<h1>getlinked Tech</h1>
+						<!-- <div> -->
+						<!-- <img id="getlinkedCreative" src="/vendors/icons/Creative.png" alt="" srcset=""> -->
+
+						<div id="getlinkedCreative-i"><img id="getlinkedCreative" src="/vendors/icons/Creative.png" alt="" srcset=""/><h1>getlinked Tech</h1></div> 
+						<!-- <div> -->
 						<div id="header-head-inner" class="flex">
 							<h1>Hackathon<span>1.0</span></h1>
 							<img src="/vendors/icons/chain-9365116-7621444.png" alt="chain">
@@ -784,6 +788,18 @@ import BrandLogo from '../components/BrandLogo.astro';
 			font-size: clamp(1.2rem, 2vw, 1rem);
 			text-align: end;
 			
+		}
+
+		#getlinkedCreative-i {
+			position: relative;
+		}
+		#getlinkedCreative-i img {
+			width:2.5rem;
+		}
+		#getlinkedCreative {
+			position: absolute;
+			right:70px;
+			top: -10px;
 		}
 	
 		#line {
